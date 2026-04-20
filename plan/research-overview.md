@@ -6,21 +6,25 @@ The goal of this research is to understand what makes slot machine games clear, 
 ---
 
 ## Table Of Contents 
-- [Slot Machine Notes](#slot-machine-notes)
+- [Research Overview](#research-overview)
+    - [Goal](#goal)
+  - [Table Of Contents](#table-of-contents)
+  - [Slot Machine Notes](#slot-machine-notes)
+    - [What is a Slot Machine?](#what-is-a-slot-machine)
     - [Common Terms](#common-terms)
     - [Common Features in Slot Machine Games](#common-features-in-slot-machine-games)
     - [User Needs](#user-needs)
     - [Ideas for Our Project](#ideas-for-our-project)
     - [Research Takeaways](#research-takeaways)
-- [Competitor Analysis](#competitor-analysis)
+  - [Competitor Analysis](#competitor-analysis)
     - [Common Features Found in Other Slot Machine Games](#common-features-found-in-other-slot-machine-games)
     - [Strengths of Existing Games](#strengths-of-existing-games)
     - [Weaknesses of Existing Games](#weaknesses-of-existing-games)
     - [What We Can Learn](#what-we-can-learn)
     - [Possible Improvements for Our Version](#possible-improvements-for-our-version)
-- [Persona Documents](#persona-documents)
-- [User Stories](#user-stories)
-- [Summary](#summary)
+  - [Persona Documents](#persona-documents)
+  - [User Stories](#user-stories)
+  - [Summary](#summary)
 
 ---
 
@@ -49,6 +53,9 @@ A slot machine is a game where a player places a bet, spins the reels, and recei
 - Paytable or help section
 - Current bet display
 - Last result display
+- Achievements
+- In-app purchases 
+- "Limited Time Events"
 - Overall theming (pirates treasure, tropical, jungle, classic casino)
 
 ### User Needs
@@ -74,6 +81,8 @@ For an improved version, we could add:
 - Sound effects
 - Paytable
 - More polished feedback messages
+- A social aspect (Daily login rewards, leaderboards, chat features, etc.)
+- Bonus features that'll encourage people to play (multipliers, free spins)
 
 ### Research Takeaways
 A better slot machine game is not just about randomness. It should also have:
@@ -81,6 +90,7 @@ A better slot machine game is not just about randomness. It should also have:
 - Readable interface
 - Immediate feedback
 - A clean and maintainable structure for the code
+- Player engagement
 
 ---  
 
@@ -103,6 +113,7 @@ Many slot machine games include:
 - Strong visual emphasis on wins and losses
 - Clear display of balance and betting amount
 - Consistent use of color and symbols
+- Consistent theme and storyline
 
 ### Weaknesses of Existing Games
 - Some interfaces are too cluttered
