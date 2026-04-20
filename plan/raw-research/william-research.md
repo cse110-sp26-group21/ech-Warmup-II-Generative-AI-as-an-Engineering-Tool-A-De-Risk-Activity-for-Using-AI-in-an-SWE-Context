@@ -26,3 +26,20 @@ Users generally want:
 - Immediate feedback after each spin
   
 Common issues include confusing interfaces, slow animations, and too many interruptions.
+
+## UI / UX Insights
+- The spin button should be large and easy to find
+- Balance and bet information must always be visible
+- Results should be clear and easy to understand
+- Keep the interface simple and uncluttered
+
+Good design focuses on **clarity, speed, and usability**.
+
+## Design Ideas
+- Clean layout with clear sections (balance, reels, controls)
+- Engaging visual theme (e.g., casino, fantasy, neon)
+- Smooth animations without slowing gameplay
+- Optional bonus features to add variety
+
+## Conclusion
+A successful slot machine app should be simple, responsive, and visually engaging. The most important aspects are clear information, fast interaction, and satisfying feedback, rather than complex mechanics.
