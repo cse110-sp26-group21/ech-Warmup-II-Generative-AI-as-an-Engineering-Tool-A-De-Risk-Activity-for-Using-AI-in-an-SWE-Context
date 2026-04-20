@@ -14,6 +14,7 @@ The goal of this research is to understand what makes slot machine games clear, 
     - [Common Terms](#common-terms)
     - [Common Features in Slot Machine Games](#common-features-in-slot-machine-games)
     - [User Needs](#user-needs)
+    - [Engagement](#engagement)
     - [Ideas for Our Project](#ideas-for-our-project)
     - [Research Takeaways](#research-takeaways)
   - [Competitor Analysis](#competitor-analysis)
@@ -65,6 +66,13 @@ Players may want:
 - Immediate feedback after each spin
 - Easy-to-read credits and bet amounts
 - Fun visual effects without too much clutter
+
+### Engagement
+To incentivize more plays, we can add:
+- Progressive jackpot - jackpot increases as the user plays more
+- Near-miss feature -get users close to winning it big
+- Never losing gimmick - disguise losses as small wins instead (if there're smaller payouts)
+- More paylines - have wins be possible with diagonals as well to make it seem like there's a higher winning chance
 
 ### Ideas for Our Project
 For a basic version, our game should include:
