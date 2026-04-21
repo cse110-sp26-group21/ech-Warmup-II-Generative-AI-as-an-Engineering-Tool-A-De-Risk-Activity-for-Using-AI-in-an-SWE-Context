@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Roulette</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme"> <button id="theme-toggle" class="theme-btn">🌓</button>
+    
+    <div id="focus-overlay" class="focus-overlay"></div>
+
+    <div class="app-container">
+        <header>
+            <h1>AI Token Roulette</h1>
+            <p class="tagline">The fun way to simulate AI costs!</p>
+        </header>
+
+        <section class="stats-panel">
+            <div class="stat-box">
+                <span class="stat-label">Your Tokens</span>
+                <span id="token-balance" class="stat-value">100</span>
+            </div>
+            <div class="stat-box burn-box">
+                <span class="stat-label">Total Burn 🔥</span>
+                <span id="total-burn" class="stat-value-small">0</span>
+            </div>
+        </section>
+
+        <main class="slot-machine">
+            <div class="reels-container">
+                <div class="reel" id="reel-1">🤖</div>
+                <div class="reel" id="reel-2">🤖</div>
+                <div class="reel" id="reel-3">🤖</div>
+            </div>
+
+            <div class="controls">
+                <button id="spin-button" class="main-btn">🎰 SPIN (5 Tokens)</button>
+                <button id="stop-button" class="stop-btn" style="display: none;">🛑 STOP NOW</button>
+            </div>
+        </main>
+
+        <section class="info-box">
+            <div id="status-log" class="message-text">Ready to play?</div>
+            <div id="payout-msg" class="win-text"></div>
+        </section>
+
+        <div class="reset-area">
+            <button id="reset-button" class="secondary-btn">New Game / Reset</button>
+        </div>
+
+        <footer>
+            <p>A fun simulator for AI inference.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
