@@ -1,0 +1,38 @@
+body[data-theme="nebula"] {
+    --primary-gradient: linear-gradient(135deg, #22d3ee, #8b5cf6 55%, #fb7185);
+    --button-gold: linear-gradient(to bottom, #fde68a, #fb7185);
+    --bg-color: #030712;
+    --card-bg: rgba(17, 24, 39, 0.84);
+    --text-main: #f8fafc;
+    --text-muted: #a5b4fc;
+    --stat-bg: rgba(36, 28, 64, 0.72);
+    --panel-border: rgba(129, 140, 248, 0.18);
+    --primary-accent: #22d3ee;
+    --secondary-accent: #fb7185;
+    --success-accent: #34d399;
+    --toggle-accent: #8b5cf6;
+    --progress-track-bg: rgba(99, 102, 241, 0.22);
+    --progress-fill-gradient: linear-gradient(90deg, #22d3ee, #8b5cf6, #fb7185);
+    --chip-bg: rgba(59, 53, 102, 0.38);
+    --chip-border: rgba(129, 140, 248, 0.24);
+    --chip-next-border: rgba(34, 211, 238, 0.5);
+    --chip-reached-bg: rgba(52, 211, 153, 0.18);
+    --chip-reached-border: rgba(52, 211, 153, 0.44);
+    --long-shot-label-color: #fbbf24;
+    --long-shot-bg: rgba(251, 191, 36, 0.12);
+    --long-shot-border: rgba(251, 191, 36, 0.38);
+    --long-shot-next-bg: rgba(251, 191, 36, 0.22);
+    --long-shot-next-border: rgba(251, 191, 36, 0.72);
+    --table-row-border: rgba(129, 140, 248, 0.22);
+    --secondary-button-bg: linear-gradient(180deg, rgba(55, 48, 90, 0.95), rgba(30, 27, 75, 0.95));
+    --reel-tray-bg: linear-gradient(180deg, rgba(19, 18, 43, 0.98), rgba(33, 27, 71, 0.95));
+    --reel-tray-border: rgba(34, 211, 238, 0.22);
+    --reel-tray-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 16px 28px rgba(8, 7, 24, 0.36);
+    --reel-surface: linear-gradient(180deg, rgba(45, 32, 84, 0.95), rgba(19, 17, 43, 0.96));
+    --reel-border: rgba(125, 211, 252, 0.26);
+    --reel-text: #f8fafc;
+    --reel-shadow: rgba(15, 23, 42, 0.58);
+    --page-background: radial-gradient(circle at top, rgba(34, 211, 238, 0.15), transparent 28%), radial-gradient(circle at 18% 18%, rgba(139, 92, 246, 0.18), transparent 24%), radial-gradient(circle at 78% 12%, rgba(251, 113, 133, 0.14), transparent 20%), linear-gradient(180deg, #0a0320 0%, #060312 55%, #030712 100%);
+    --starfield-layer-one: radial-gradient(circle, rgba(255, 255, 255, 0.88) 0 1px, transparent 1.5px), radial-gradient(circle, rgba(196, 181, 253, 0.72) 0 1px, transparent 1.6px), radial-gradient(circle, rgba(103, 232, 249, 0.5) 0 1.2px, transparent 1.8px);
+    --starfield-layer-two: radial-gradient(circle at 12% 34%, rgba(34, 211, 238, 0.11), transparent 22%), radial-gradient(circle at 82% 18%, rgba(251, 113, 133, 0.1), transparent 20%), radial-gradient(circle at 72% 76%, rgba(168, 85, 247, 0.1), transparent 19%);
+}

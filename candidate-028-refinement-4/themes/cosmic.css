@@ -1,0 +1,38 @@
+body[data-theme="cosmic"] {
+    --primary-gradient: linear-gradient(135deg, #38bdf8, #818cf8 55%, #f472b6);
+    --button-gold: linear-gradient(to bottom, #fef08a, #f59e0b);
+    --bg-color: #020617;
+    --card-bg: rgba(15, 23, 42, 0.84);
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --stat-bg: rgba(30, 41, 59, 0.78);
+    --panel-border: rgba(148, 163, 184, 0.16);
+    --primary-accent: #818cf8;
+    --secondary-accent: #f472b6;
+    --success-accent: #22c55e;
+    --toggle-accent: #2dd4bf;
+    --progress-track-bg: rgba(148, 163, 184, 0.25);
+    --progress-fill-gradient: linear-gradient(90deg, #22c55e, #14b8a6);
+    --chip-bg: rgba(148, 163, 184, 0.12);
+    --chip-border: rgba(148, 163, 184, 0.25);
+    --chip-next-border: rgba(129, 140, 248, 0.45);
+    --chip-reached-bg: rgba(34, 197, 94, 0.16);
+    --chip-reached-border: rgba(34, 197, 94, 0.45);
+    --long-shot-label-color: #f59e0b;
+    --long-shot-bg: rgba(245, 158, 11, 0.12);
+    --long-shot-border: rgba(245, 158, 11, 0.35);
+    --long-shot-next-bg: rgba(245, 158, 11, 0.2);
+    --long-shot-next-border: rgba(245, 158, 11, 0.7);
+    --table-row-border: rgba(148, 163, 184, 0.25);
+    --secondary-button-bg: linear-gradient(180deg, rgba(51, 65, 85, 0.95), rgba(30, 41, 59, 0.95));
+    --reel-tray-bg: linear-gradient(180deg, rgba(8, 15, 30, 0.98), rgba(14, 25, 48, 0.96));
+    --reel-tray-border: rgba(56, 189, 248, 0.2);
+    --reel-tray-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 14px 24px rgba(15, 23, 42, 0.18);
+    --reel-surface: linear-gradient(180deg, rgba(24, 36, 63, 0.95), rgba(10, 15, 28, 0.96));
+    --reel-border: rgba(96, 165, 250, 0.28);
+    --reel-text: #e2e8f0;
+    --reel-shadow: rgba(15, 23, 42, 0.55);
+    --page-background: radial-gradient(circle at top, rgba(37, 99, 235, 0.16), transparent 30%), radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.12), transparent 25%), radial-gradient(circle at 80% 10%, rgba(56, 189, 248, 0.14), transparent 22%), linear-gradient(180deg, #040816 0%, #020617 55%, #01030a 100%);
+    --starfield-layer-one: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.5px), radial-gradient(circle, rgba(191, 219, 254, 0.8) 0 1px, transparent 1.6px), radial-gradient(circle, rgba(125, 211, 252, 0.55) 0 1.2px, transparent 1.8px);
+    --starfield-layer-two: radial-gradient(circle at 15% 30%, rgba(59, 130, 246, 0.12), transparent 22%), radial-gradient(circle at 85% 18%, rgba(244, 114, 182, 0.09), transparent 20%), radial-gradient(circle at 70% 78%, rgba(45, 212, 191, 0.08), transparent 18%);
+}

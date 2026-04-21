@@ -3,56 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Token Roulette</title>
+    <title>Cosmic Token Roulette</title>
     <link rel="stylesheet" href="styles.css">
+    <link id="theme-stylesheet" rel="stylesheet" href="themes/cosmic.css">
 </head>
-<body class="light-theme"> <button id="theme-toggle" class="theme-btn">🌓</button>
-    
+<body data-theme="cosmic">
+    <!-- Full-screen overlay used to dim the background during an active spin. -->
     <div id="focus-overlay" class="focus-overlay"></div>
 
     <div class="app-container">
+        <!-- Primary title area for the game identity and short positioning copy. -->
         <header>
-            <h1>AI Token Roulette</h1>
-            <p class="tagline">The fun way to simulate AI costs!</p>
+            <h1 id="app-title">Cosmic Token Roulette</h1>
+            <p id="app-tagline" class="tagline">Plot a course through the starfield and chase the rocket jackpot.</p>
+            <div class="theme-switch-row">
+                <button id="theme-cycle-button" class="theme-cycle-btn" type="button">Switch Theme: Cosmic</button>
+            </div>
         </header>
 
+        <!-- Session stats that reflect the player's balance and total play history. -->
         <section class="stats-panel">
             <div class="stat-box">
                 <span class="stat-label">Your Tokens</span>
-                <span id="token-balance" class="stat-value">100</span>
+                <span id="token-balance" class="stat-value">100,000</span>
             </div>
-            <div class="stat-box burn-box">
-                <span class="stat-label">Total Burn 🔥</span>
-                <span id="total-burn" class="stat-value-small">0</span>
+            <div class="stat-box cycle-box">
+                <span class="stat-label">Lifetime Spins</span>
+                <span id="lifetime-spin-count" class="stat-value-small">0</span>
             </div>
+        </section>
+
+        <!-- Timed reward ladder that refreshes every five minutes. -->
+        <section class="progress-box" aria-labelledby="progress-heading">
+            <div class="progress-header">
+                <h2 id="progress-heading">Milestone Track</h2>
+                <p id="progress-timer" class="progress-timer">Refresh in 5:00</p>
+            </div>
+            <p class="progress-caption">Reward gaps widen gradually during the current five-minute window.</p>
+            <div
+                id="progress-track"
+                class="progress-track"
+                role="progressbar"
+                aria-labelledby="progress-heading"
+                aria-valuemin="0"
+                aria-valuemax="1"
+                aria-valuenow="0"
+            >
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <div id="progress-milestones" class="progress-milestones"></div>
+            <p id="progress-summary" class="progress-summary"></p>
         </section>
 
         <main class="slot-machine">
+            <!-- 3x3 board rendered as nine individual cells so JS can animate columns in place. -->
             <div class="reels-container">
-                <div class="reel" id="reel-1">🤖</div>
-                <div class="reel" id="reel-2">🤖</div>
-                <div class="reel" id="reel-3">🤖</div>
+                <div class="reel" data-cell-index="0" data-symbol="📈">🌑</div>
+                <div class="reel" data-cell-index="1" data-symbol="🔮">🌒</div>
+                <div class="reel" data-cell-index="2" data-symbol="🎰">🌓</div>
+                <div class="reel" data-cell-index="3" data-symbol="💸">🌔</div>
+                <div class="reel" data-cell-index="4" data-symbol="💰">🌕</div>
+                <div class="reel" data-cell-index="5" data-symbol="💎">🪐</div>
+                <div class="reel" data-cell-index="6" data-symbol="📈">🌑</div>
+                <div class="reel" data-cell-index="7" data-symbol="🔮">🌒</div>
+                <div class="reel" data-cell-index="8" data-symbol="🚀">🚀</div>
             </div>
 
+            <!-- Spin control area swaps between the main action and the temporary stop action. -->
             <div class="controls">
-                <button id="spin-button" class="main-btn">🎰 SPIN (5 Tokens)</button>
+                <button id="spin-button" class="main-btn">🌌 SPIN (50 Tokens)</button>
                 <button id="stop-button" class="stop-btn" style="display: none;">🛑 STOP NOW</button>
+                <div class="toggle-group" aria-label="Spin options">
+                    <label class="toggle-control" for="quick-spin-toggle">
+                        <input id="quick-spin-toggle" type="checkbox">
+                        <span>Quick Spin</span>
+                    </label>
+                    <label class="toggle-control" for="batch-spin-toggle">
+                        <input id="batch-spin-toggle" type="checkbox">
+                        <span>10-Spin Batch</span>
+                    </label>
+                    <label class="toggle-control" for="best-spin-toggle">
+                        <input id="best-spin-toggle" type="checkbox" checked>
+                        <span>Show Best Spin</span>
+                    </label>
+                </div>
             </div>
         </main>
 
+        <!-- Result area for the short headline and the detailed payout summary. -->
         <section class="info-box">
-            <div id="status-log" class="message-text">Ready to play?</div>
-            <div id="payout-msg" class="win-text"></div>
+            <div id="status-log" class="message-text">Ready to launch?</div>
+            <div id="payout-msg" class="payout-message"></div>
         </section>
 
+        <!-- Public paytable intentionally lists only premium events; smaller credits stay implicit. -->
+        <section class="rules-box" aria-labelledby="rules-heading">
+            <div class="rules-header">
+                <h2 id="rules-heading">Payout Rules</h2>
+                <p id="rules-summary" class="rules-summary"></p>
+            </div>
+            <table class="rules-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Match</th>
+                        <th scope="col">Payout</th>
+                    </tr>
+                </thead>
+                <tbody id="payout-rules"></tbody>
+            </table>
+        </section>
+
+        <!-- Separate reset affordance to avoid confusing it with the primary spin action. -->
         <div class="reset-area">
             <button id="reset-button" class="secondary-btn">New Game / Reset</button>
         </div>
 
+        <!-- Lightweight footer copy keeps the experience framed as a simulation. -->
         <footer>
-            <p>A fun simulator for AI inference.</p>
+            <p id="footer-copy">A space-themed simulator for AI inference.</p>
         </footer>
     </div>
+
+    <script src="themes/theme-registry.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

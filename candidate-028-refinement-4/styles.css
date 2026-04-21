@@ -1,26 +1,47 @@
+/* Shared layout tokens. Active theme files override these via CSS variables. */
 :root {
-    --primary-gradient: linear-gradient(135deg, #6e8efb, #a777e3);
-    --button-gold: linear-gradient(to bottom, #ffeb3b, #fbc02d);
-}
-
-/* Theme Variables */
-.light-theme {
-    --bg-color: #f1f5f9;
-    --card-bg: #ffffff;
-    --text-main: #1e293b;
-    --stat-bg: #f8fafc;
-}
-
-.dark-theme {
-    --bg-color: #0f172a;
-    --card-bg: #1e293b;
+    --primary-gradient: linear-gradient(135deg, #38bdf8, #818cf8 55%, #f472b6);
+    --button-gold: linear-gradient(to bottom, #fef08a, #f59e0b);
+    --bg-color: #020617;
+    --card-bg: rgba(15, 23, 42, 0.84);
     --text-main: #f1f5f9;
-    --stat-bg: #334155;
+    --text-muted: #94a3b8;
+    --stat-bg: rgba(30, 41, 59, 0.78);
+    --panel-border: rgba(148, 163, 184, 0.16);
+    --primary-accent: #818cf8;
+    --secondary-accent: #f472b6;
+    --success-accent: #22c55e;
+    --toggle-accent: #2dd4bf;
+    --progress-track-bg: rgba(148, 163, 184, 0.25);
+    --progress-fill-gradient: linear-gradient(90deg, #22c55e, #14b8a6);
+    --chip-bg: rgba(148, 163, 184, 0.12);
+    --chip-border: rgba(148, 163, 184, 0.25);
+    --chip-next-border: rgba(129, 140, 248, 0.45);
+    --chip-reached-bg: rgba(34, 197, 94, 0.16);
+    --chip-reached-border: rgba(34, 197, 94, 0.45);
+    --long-shot-label-color: #f59e0b;
+    --long-shot-bg: rgba(245, 158, 11, 0.12);
+    --long-shot-border: rgba(245, 158, 11, 0.35);
+    --long-shot-next-bg: rgba(245, 158, 11, 0.2);
+    --long-shot-next-border: rgba(245, 158, 11, 0.7);
+    --table-row-border: rgba(148, 163, 184, 0.25);
+    --secondary-button-bg: linear-gradient(180deg, rgba(51, 65, 85, 0.95), rgba(30, 41, 59, 0.95));
+    --reel-tray-bg: linear-gradient(180deg, rgba(8, 15, 30, 0.98), rgba(14, 25, 48, 0.96));
+    --reel-tray-border: rgba(56, 189, 248, 0.2);
+    --reel-tray-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 14px 24px rgba(15, 23, 42, 0.18);
+    --reel-surface: linear-gradient(180deg, rgba(24, 36, 63, 0.95), rgba(10, 15, 28, 0.96));
+    --reel-border: rgba(96, 165, 250, 0.28);
+    --reel-text: #e2e8f0;
+    --reel-shadow: rgba(15, 23, 42, 0.55);
+    --page-background: radial-gradient(circle at top, rgba(37, 99, 235, 0.16), transparent 30%), radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.12), transparent 25%), radial-gradient(circle at 80% 10%, rgba(56, 189, 248, 0.14), transparent 22%), linear-gradient(180deg, #040816 0%, #020617 55%, #01030a 100%);
+    --starfield-layer-one: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.5px), radial-gradient(circle, rgba(191, 219, 254, 0.8) 0 1px, transparent 1.6px), radial-gradient(circle, rgba(125, 211, 252, 0.55) 0 1.2px, transparent 1.8px);
+    --starfield-layer-two: radial-gradient(circle at 15% 30%, rgba(59, 130, 246, 0.12), transparent 22%), radial-gradient(circle at 85% 18%, rgba(244, 114, 182, 0.09), transparent 20%), radial-gradient(circle at 70% 78%, rgba(45, 212, 191, 0.08), transparent 18%);
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
+    background-image: var(--page-background);
     transition: background 0.3s ease;
     font-family: 'Inter', sans-serif;
     display: flex;
@@ -28,9 +49,33 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    overflow-x: hidden;
+    position: relative;
+    padding: 24px 0;
 }
 
-/* Focus Overlay */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+body::before {
+    z-index: 0;
+    opacity: 0.75;
+    background-image: var(--starfield-layer-one);
+    background-size: 120px 120px, 170px 170px, 240px 240px;
+    background-position: 0 0, 35px 60px, 90px 30px;
+}
+
+body::after {
+    z-index: 1;
+    background: var(--starfield-layer-two);
+}
+
+/* Full-screen dimmer used while a spin is in progress. */
 .focus-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -42,19 +87,159 @@ body {
 }
 .focus-overlay.active { opacity: 1; }
 
+/* Main card that contains the full slot machine interface. */
 .app-container {
     position: relative;
     z-index: 10; /* Above overlay */
     width: 90%;
-    max-width: 400px;
+    max-width: 420px;
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 28px 80px rgba(2, 6, 23, 0.6);
     text-align: center;
 }
 
-/* Stats Styling */
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 0.02em;
+}
+
+.tagline {
+    margin: 10px 0 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.theme-switch-row {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+.theme-cycle-btn {
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--panel-border);
+    background: var(--secondary-button-bg);
+    color: var(--text-main);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.theme-cycle-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    border-color: var(--primary-accent);
+}
+
+.theme-cycle-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.main-btn,
+.stop-btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-width: min(100%, 320px);
+    padding: 1rem 1.4rem;
+    border: 0;
+    border-radius: 18px;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff8eb;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease, opacity 0.18s ease;
+}
+
+.main-btn {
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 36%),
+        linear-gradient(135deg, #f97316, #fb7185 46%, #8b5cf6 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 -2px 0 rgba(88, 28, 135, 0.3),
+        0 18px 34px rgba(249, 115, 22, 0.26),
+        0 8px 14px rgba(17, 24, 39, 0.28);
+}
+
+.main-btn::before,
+.stop-btn::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 42%, rgba(15, 23, 42, 0.14));
+    z-index: -1;
+}
+
+.main-btn::after,
+.stop-btn::after {
+    content: '';
+    position: absolute;
+    top: -35%;
+    left: -30%;
+    width: 42%;
+    height: 170%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34), transparent);
+    transform: rotate(18deg);
+    opacity: 0.8;
+    transition: transform 0.45s ease, opacity 0.25s ease;
+}
+
+.main-btn:hover:not(:disabled),
+.stop-btn:hover:not(:disabled) {
+    transform: translateY(-2px) scale(1.01);
+    filter: saturate(1.08);
+}
+
+.main-btn:hover:not(:disabled) {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 -2px 0 rgba(88, 28, 135, 0.3),
+        0 22px 40px rgba(249, 115, 22, 0.3),
+        0 10px 18px rgba(17, 24, 39, 0.32);
+}
+
+.main-btn:hover:not(:disabled)::after,
+.stop-btn:hover:not(:disabled)::after {
+    transform: translateX(250%) rotate(18deg);
+}
+
+.main-btn:active:not(:disabled),
+.stop-btn:active:not(:disabled) {
+    transform: translateY(1px) scale(0.992);
+}
+
+.main-btn:disabled,
+.stop-btn:disabled {
+    opacity: 0.72;
+    cursor: not-allowed;
+    filter: grayscale(0.08);
+}
+
+.stop-btn {
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 36%),
+        linear-gradient(135deg, #ef4444, #ec4899 52%, #7c3aed 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        inset 0 -2px 0 rgba(127, 29, 29, 0.35),
+        0 16px 28px rgba(239, 68, 68, 0.22),
+        0 8px 14px rgba(17, 24, 39, 0.25);
+}
+
+/* Session stat cards shown near the top of the interface. */
 .stats-panel {
     display: flex;
     gap: 10px;
@@ -65,49 +250,313 @@ body {
     background: var(--stat-bg);
     padding: 10px;
     border-radius: 15px;
+    border: 1px solid var(--panel-border);
 }
-.stat-value { font-size: 2rem; font-weight: 800; color: #4f46e5; display: block; }
-.stat-value-small { font-size: 1.2rem; font-weight: 800; color: #ef4444; display: block; }
+.stat-value { font-size: 2rem; font-weight: 800; color: var(--primary-accent); display: block; }
+.stat-value-small { font-size: 1.2rem; font-weight: 800; color: var(--secondary-accent); display: block; }
 
-/* Centered New Game Button */
+/* Timed reward ladder combines a progress bar, countdown timer, and discrete reward chips. */
+.progress-box {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: var(--stat-bg);
+    border-radius: 18px;
+    text-align: left;
+    border: 1px solid var(--panel-border);
+}
+
+.progress-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.progress-header h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.progress-timer {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+}
+
+.progress-caption,
+.progress-summary {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.progress-track {
+    margin-top: 12px;
+    width: 100%;
+    height: 14px;
+    background: var(--progress-track-bg);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background: var(--progress-fill-gradient);
+    border-radius: inherit;
+    transition: width 0.3s ease;
+}
+
+.progress-milestones {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.progress-marker {
+    padding: 8px;
+    border-radius: 12px;
+    background: var(--chip-bg);
+    border: 1px solid var(--chip-border);
+    text-align: center;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.progress-marker-badge {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--long-shot-label-color);
+}
+
+.progress-marker-label,
+.progress-marker-reward {
+    display: block;
+}
+
+.progress-marker-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.progress-marker-reward {
+    margin-top: 4px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.progress-marker.reached {
+    background: var(--chip-reached-bg);
+    border-color: var(--chip-reached-border);
+}
+
+.progress-marker.long-shot {
+    background: var(--long-shot-bg);
+    border-color: var(--long-shot-border);
+}
+
+.progress-marker.next {
+    transform: translateY(-1px);
+    border-color: var(--chip-next-border);
+}
+
+.progress-marker.long-shot.next {
+    border-color: var(--long-shot-next-border);
+    background: var(--long-shot-next-bg);
+}
+
+/* Result messaging area underneath the slot board. */
+.info-box {
+    margin-top: 16px;
+}
+
+.message-text {
+    font-weight: 700;
+}
+
+.payout-message {
+    min-height: 42px;
+}
+
+.win-text {
+    display: block;
+    margin-top: 8px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--success-accent);
+}
+
+.payout-detail {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Public-facing premium rules card. Smaller scoring logic stays intentionally undocumented here. */
+.rules-box {
+    margin-top: 24px;
+    padding: 16px;
+    background: var(--stat-bg);
+    border-radius: 18px;
+    text-align: left;
+    border: 1px solid var(--panel-border);
+}
+
+.rules-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.rules-header h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.rules-summary {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.rules-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rules-table th,
+.rules-table td {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--table-row-border);
+    font-size: 0.95rem;
+}
+
+.rules-table thead th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+.rules-table tbody th {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.rule-detail {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.rules-table tbody td {
+    text-align: right;
+    font-weight: 700;
+    color: var(--primary-accent);
+}
+
+.rules-table tbody tr:last-child th,
+.rules-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Reset action kept visually separate from the spin controls. */
 .reset-area {
     margin-top: 25px;
     display: flex;
     justify-content: center;
 }
 .secondary-btn {
-    background: #e2e8f0;
-    color: #475569;
+    background: var(--secondary-button-bg);
+    color: var(--text-main);
     font-size: 0.9rem;
     padding: 10px 20px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid var(--panel-border);
     cursor: pointer;
 }
 
-/* Floating Theme Toggle */
-.theme-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 1.5rem;
-    background: var(--card-bg);
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 50px; height: 50px;
-    z-index: 100;
+/* 3x3 board layout that supports independent per-column animation. */
+.reels-container {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 14px;
+    border-radius: 22px;
+    background: var(--reel-tray-bg);
+    border: 1px solid var(--reel-tray-border);
+    box-shadow: var(--reel-tray-shadow);
 }
 
-/* Reels & Payouts */
-.reels-container { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-group {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+}
+
+.toggle-control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background: var(--stat-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+}
+
+.toggle-control input {
+    accent-color: var(--toggle-accent);
+}
+
+@media (max-width: 480px) {
+    .toggle-group {
+        grid-template-columns: 1fr;
+    }
+}
+
 .reel {
-    width: 80px; height: 100px;
-    background: #fff;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 2.5rem; border-radius: 10px;
-    border: 2px solid #ddd;
-    color: #000;
+    width: 80px;
+    height: 80px;
+    background: var(--reel-surface);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    border-radius: 12px;
+    border: 1px solid var(--reel-border);
+    color: var(--reel-text);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 10px 18px var(--reel-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+footer p {
+    margin: 22px 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+/* Short blur and shake treatment helps the predetermined board feel like moving reels. */
 .reel.spinning { filter: blur(2px); animation: shake 0.1s infinite; }
 @keyframes shake { 0% { transform: translateY(0); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0); } }

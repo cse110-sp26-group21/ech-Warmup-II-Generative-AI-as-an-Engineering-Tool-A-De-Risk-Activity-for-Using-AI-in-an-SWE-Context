@@ -1,0 +1,63 @@
+body[data-theme="minimalClean"] {
+    --primary-gradient: linear-gradient(135deg, #0f766e, #334155);
+    --button-gold: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+    --bg-color: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.96);
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --stat-bg: rgba(248, 250, 252, 0.98);
+    --panel-border: rgba(148, 163, 184, 0.32);
+    --primary-accent: #0f766e;
+    --secondary-accent: #334155;
+    --success-accent: #15803d;
+    --toggle-accent: #0f766e;
+    --progress-track-bg: rgba(203, 213, 225, 0.65);
+    --progress-fill-gradient: linear-gradient(90deg, #0f766e, #14b8a6);
+    --chip-bg: rgba(241, 245, 249, 0.92);
+    --chip-border: rgba(203, 213, 225, 0.92);
+    --chip-next-border: rgba(15, 118, 110, 0.42);
+    --chip-reached-bg: rgba(220, 252, 231, 0.9);
+    --chip-reached-border: rgba(74, 222, 128, 0.55);
+    --long-shot-label-color: #0f766e;
+    --long-shot-bg: rgba(226, 232, 240, 0.95);
+    --long-shot-border: rgba(148, 163, 184, 0.5);
+    --long-shot-next-bg: rgba(240, 253, 250, 0.98);
+    --long-shot-next-border: rgba(15, 118, 110, 0.62);
+    --table-row-border: rgba(226, 232, 240, 0.9);
+    --secondary-button-bg: linear-gradient(180deg, rgba(241, 245, 249, 1), rgba(226, 232, 240, 1));
+    --reel-tray-bg: linear-gradient(180deg, rgba(248, 250, 252, 1), rgba(241, 245, 249, 1));
+    --reel-tray-border: rgba(203, 213, 225, 0.95);
+    --reel-tray-shadow: 0 12px 28px rgba(148, 163, 184, 0.18);
+    --reel-surface: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
+    --reel-border: rgba(203, 213, 225, 0.95);
+    --reel-text: #0f172a;
+    --reel-shadow: rgba(203, 213, 225, 0.22);
+    --page-background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    --starfield-layer-one: radial-gradient(circle, rgba(148, 163, 184, 0.14) 0 1px, transparent 1.7px), radial-gradient(circle, rgba(226, 232, 240, 0.3) 0 1px, transparent 1.7px), radial-gradient(circle, rgba(203, 213, 225, 0.18) 0 1px, transparent 1.7px);
+    --starfield-layer-two: radial-gradient(circle at 20% 20%, rgba(241, 245, 249, 0.9), transparent 24%), radial-gradient(circle at 80% 10%, rgba(226, 232, 240, 0.7), transparent 22%);
+}
+
+body[data-theme="minimalClean"]::before {
+    background-size: 180px 180px, 220px 220px, 260px 260px;
+    opacity: 0.4;
+}
+
+body[data-theme="minimalClean"] .app-container,
+body[data-theme="minimalClean"] .progress-box,
+body[data-theme="minimalClean"] .rules-box,
+body[data-theme="minimalClean"] .stat-box {
+    box-shadow: 0 12px 30px rgba(148, 163, 184, 0.12);
+}
+
+body[data-theme="minimalClean"] .reel,
+body[data-theme="minimalClean"] .reels-container {
+    box-shadow: var(--reel-tray-shadow);
+}
+
+body[data-theme="minimalClean"] .message-text {
+    letter-spacing: 0.01em;
+}
+
+body[data-theme="minimalClean"] .win-text {
+    text-shadow: none;
+}
