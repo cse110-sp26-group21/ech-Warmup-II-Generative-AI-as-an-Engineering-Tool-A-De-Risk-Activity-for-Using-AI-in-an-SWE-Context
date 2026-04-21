@@ -1,0 +1,113 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #6e8efb, #a777e3);
+    --button-gold: linear-gradient(to bottom, #ffeb3b, #fbc02d);
+}
+
+/* Theme Variables */
+.light-theme {
+    --bg-color: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --stat-bg: #f8fafc;
+}
+
+.dark-theme {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f1f5f9;
+    --stat-bg: #334155;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: background 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Focus Overlay */
+.focus-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+.focus-overlay.active { opacity: 1; }
+
+.app-container {
+    position: relative;
+    z-index: 10; /* Above overlay */
+    width: 90%;
+    max-width: 400px;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Stats Styling */
+.stats-panel {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.stat-box {
+    flex: 1;
+    background: var(--stat-bg);
+    padding: 10px;
+    border-radius: 15px;
+}
+.stat-value { font-size: 2rem; font-weight: 800; color: #4f46e5; display: block; }
+.stat-value-small { font-size: 1.2rem; font-weight: 800; color: #ef4444; display: block; }
+
+/* Centered New Game Button */
+.reset-area {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+.secondary-btn {
+    background: #e2e8f0;
+    color: #475569;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Floating Theme Toggle */
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px; height: 50px;
+    z-index: 100;
+}
+
+/* Reels & Payouts */
+.reels-container { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
+.reel {
+    width: 80px; height: 100px;
+    background: #fff;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 2.5rem; border-radius: 10px;
+    border: 2px solid #ddd;
+    color: #000;
+}
+.reel.spinning { filter: blur(2px); animation: shake 0.1s infinite; }
+@keyframes shake { 0% { transform: translateY(0); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0); } }
