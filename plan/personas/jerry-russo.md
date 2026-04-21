@@ -23,3 +23,23 @@
 - Reliable payouts / transparent odds
 - Customer support if he has issues
 - Fun rewards/bonuses to keep engagement high
+
+**Doesn’t Want**
+- Complicated rules or anything that feels hard to understand
+- Slow-loading games or laggy animations
+- Confusing menus or too many buttons/options
+- Feeling judged or restricted while playing
+- Long tutorials or onboarding steps
+- High-pressure spending prompts
+- Games that feel boring or low-energy
+- Anything that interrupts the flow of spinning and results
+- Reminder of financial stress or losses
+- Overly serious tone in the app
+  
+**Doesn’t Need**
+- Advanced strategy systems or skill-based mechanics
+- Detailed statistical breakdowns or analytics
+- Complex account management features
+- Competitive ranking systems or tournaments
+- Heavy customization or deep settings menus
+- Multiple game modes that add complexity
