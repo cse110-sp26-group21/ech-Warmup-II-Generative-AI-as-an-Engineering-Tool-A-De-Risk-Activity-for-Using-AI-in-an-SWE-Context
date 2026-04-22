@@ -1,0 +1,109 @@
+body[data-theme="arcadeNeon"] {
+    --primary-gradient: linear-gradient(135deg, #22d3ee, #8b5cf6 48%, #fb7185);
+    --button-gold: linear-gradient(to bottom, #67e8f9, #8b5cf6);
+    --bg-color: #050816;
+    --card-bg: rgba(13, 18, 39, 0.88);
+    --text-main: #f5f3ff;
+    --text-muted: #c4b5fd;
+    --stat-bg: rgba(24, 28, 58, 0.8);
+    --panel-border: rgba(45, 212, 191, 0.2);
+    --primary-accent: #22d3ee;
+    --secondary-accent: #fb7185;
+    --success-accent: #2dd4bf;
+    --toggle-accent: #a855f7;
+    --progress-track-bg: rgba(76, 29, 149, 0.42);
+    --progress-fill-gradient: linear-gradient(90deg, #22d3ee, #a855f7, #fb7185);
+    --chip-bg: rgba(37, 43, 92, 0.46);
+    --chip-border: rgba(56, 189, 248, 0.28);
+    --chip-next-border: rgba(244, 114, 182, 0.56);
+    --chip-reached-bg: rgba(45, 212, 191, 0.18);
+    --chip-reached-border: rgba(45, 212, 191, 0.44);
+    --long-shot-label-color: #fde047;
+    --long-shot-bg: rgba(253, 224, 71, 0.16);
+    --long-shot-border: rgba(253, 224, 71, 0.42);
+    --long-shot-next-bg: rgba(253, 224, 71, 0.24);
+    --long-shot-next-border: rgba(253, 224, 71, 0.72);
+    --table-row-border: rgba(56, 189, 248, 0.22);
+    --secondary-button-bg: linear-gradient(180deg, rgba(39, 39, 82, 0.96), rgba(19, 23, 46, 0.96));
+    --reel-tray-bg: linear-gradient(180deg, rgba(14, 18, 52, 0.98), rgba(10, 12, 32, 0.98));
+    --reel-tray-border: rgba(34, 211, 238, 0.34);
+    --reel-tray-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 0 1px rgba(168, 85, 247, 0.16), 0 0 26px rgba(34, 211, 238, 0.16), 0 18px 32px rgba(9, 12, 26, 0.48);
+    --reel-surface: linear-gradient(180deg, rgba(39, 45, 98, 0.96), rgba(16, 20, 48, 0.98));
+    --reel-border: rgba(99, 102, 241, 0.44);
+    --reel-text: #f5f3ff;
+    --reel-shadow: rgba(15, 23, 42, 0.62);
+    --page-background: radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.14), transparent 22%), radial-gradient(circle at 80% 15%, rgba(244, 114, 182, 0.14), transparent 20%), radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.16), transparent 26%), linear-gradient(180deg, #070a1c 0%, #040713 55%, #02030b 100%);
+    --starfield-layer-one: linear-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(168, 85, 247, 0.08) 1px, transparent 1px), radial-gradient(circle, rgba(255, 255, 255, 0.55) 0 1px, transparent 1.6px);
+    --starfield-layer-two: radial-gradient(circle at 15% 35%, rgba(34, 211, 238, 0.18), transparent 18%), radial-gradient(circle at 82% 18%, rgba(244, 114, 182, 0.16), transparent 18%), radial-gradient(circle at 68% 78%, rgba(168, 85, 247, 0.14), transparent 22%);
+}
+
+body[data-theme="arcadeNeon"]::before {
+    background-size: 42px 42px, 42px 42px, 180px 180px;
+    background-position: 0 0, 0 0, 28px 44px;
+    opacity: 0.5;
+}
+
+body[data-theme="arcadeNeon"] .app-container,
+body[data-theme="arcadeNeon"] .progress-box,
+body[data-theme="arcadeNeon"] .rules-box,
+body[data-theme="arcadeNeon"] .stat-box {
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.08), 0 0 20px rgba(168, 85, 247, 0.08);
+}
+
+body[data-theme="arcadeNeon"] .main-btn,
+body[data-theme="arcadeNeon"] .stop-btn,
+body[data-theme="arcadeNeon"] .secondary-btn {
+    color: #f8fafc;
+    border-radius: 14px;
+    border: 1px solid rgba(34, 211, 238, 0.42);
+    box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.18), 0 0 18px rgba(34, 211, 238, 0.14);
+}
+
+body[data-theme="arcadeNeon"] .main-btn {
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.22), rgba(168, 85, 247, 0.28), rgba(244, 114, 182, 0.24));
+}
+
+body[data-theme="arcadeNeon"] .stop-btn {
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.28), rgba(168, 85, 247, 0.2));
+}
+
+body[data-theme="arcadeNeon"] .toggle-control {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 14px rgba(99, 102, 241, 0.08);
+}
+
+body[data-theme="arcadeNeon"] .reels-container,
+body[data-theme="arcadeNeon"] .reel {
+    box-shadow: var(--reel-tray-shadow);
+}
+
+body[data-theme="arcadeNeon"] .reel {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.14), 0 0 18px rgba(168, 85, 247, 0.14);
+}
+
+body[data-theme="arcadeNeon"] .message-text {
+    color: var(--primary-accent);
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.16);
+}
+
+body[data-theme="arcadeNeon"] .win-text {
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.36), 0 0 20px rgba(168, 85, 247, 0.28);
+    animation: arcade-neon-pulse 1.6s ease-in-out infinite;
+}
+
+body[data-theme="arcadeNeon"] .progress-marker.next,
+body[data-theme="arcadeNeon"] .progress-marker.long-shot.next {
+    box-shadow: 0 0 14px rgba(34, 211, 238, 0.14);
+}
+
+@keyframes arcade-neon-pulse {
+    0%,
+    100% {
+        transform: translateY(0);
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: translateY(-1px);
+        filter: brightness(1.18);
+    }
+}
