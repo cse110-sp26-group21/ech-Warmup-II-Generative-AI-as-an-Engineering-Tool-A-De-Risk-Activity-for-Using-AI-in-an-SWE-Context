@@ -1,4 +1,4 @@
-# Jerry Russo 💸🍝💔 
+# Jerry Russo 💰🍝💔 
 ![jerry](jerry.png)
 
 **Details:** Jerry Russo is a recently divorced Italian man from New Jersey who enjoys gambling as a way to destress. His favorite casino activity is slots because of their simplicity and quick results. They also require the least thinking, which isn't exactly Jerry's strong suit. Secretly, Jerry hopes to one day win big and get back his ex-wife, Camilla, but unfortunately, between work and other responsibilities, Jerry finds it difficult to make time to go to the casino. Jerry is interested in finding an easy-to-use slot machine from the comfort of his own home so he can get Camilla back. Unfortunately, Jerry doesn't quite realize that gambling is what drove her away to begin with... but Jerry doesn't need to know that :-).
