@@ -39,6 +39,7 @@ For our own project, the research suggests we should focus on building a slot ma
 - **William** – Focused on gameplay loops, user expectations, UI clarity, and the importance of responsiveness.
 - **Lucia** – Contributed technical considerations, engineering quality standards, and implementation constraints for building the app.
 - **Aaran** – Focused on UI/UX design patterns, slot machine mechanics, user psychology (near-miss effects, variable rewards), technical game architecture, and best practices from competitive slot games. Contributed structured design recommendations and feature prioritization for building a responsive, engaging slot machine app.
+- **Eliot** - Focused on user engagement through psycological methods, necessary UI features, more game mechanics, and cross platform considerations.
 
 ---
 
